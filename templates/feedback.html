@@ -1,0 +1,77 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 pr-lg-5 mb-5 mb-md-0">
+                <img src="https://icon-library.com/images/feedback-icon-png/feedback-icon-png-20.jpg" alt=""
+                    class="img-fluid mb-3 d-none d-md-block" id="register-logo">
+                <h1>Feedback</h1>
+                <p class="font-italic text-muted mb-0">Typically it takes 2 mins to write a feedback</p>
+                 <!-- <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
+                        <u>Bootstrapious</u></a>
+                </p> -->
+            </div>
+
+            <div class="col-md-8 mb-5">
+                <form action="" class="p-5 bg-white" method="POST">
+                    <!-- <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="text-black" for="fname">First Name</label>
+                            <input type="text" id="fname" name="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="text-black" for="lname">Last Name</label>
+                            <input type="text" id="lname"  class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="email">Email</label>
+                            <input type="email" id="email" class="form-control">
+                        </div>
+                    </div> -->
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="subject">Order ID: {{ orderid }}</label>
+                            <!-- <input type="subject" id="subject" placeholder='' class="form-control"> -->
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black" for="message">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="2" class="form-control" placeholder="Write your feedback here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <button type="submit" name="send" class="btn btn-primary py-2 px-4 text-white">Send Feedback</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- <div class="col-md-4">
+                <div class="p-4 mb-3 bg-white text-center">
+                    <p class="mb-0 font-weight-bold">Address</p>
+                    <p class="mb-4">United States</p>
+
+                    <p class="mb-0 font-weight-bold">Phone</p>
+                    <p class="mb-4"><a href="#">+1-(111)-1111111</a></p>
+
+                    <p class="mb-0 font-weight-bold">Email Address</p>
+                    <p class="mb-0"><a href="#">AutomatedDeliverySystem@gmail.com</a></p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "shops.html" %}
+
+{% block checkout %}
+<div class="row">
+    <div class="col-lg-10 mx-auto">
+        <div class="career-search mb-60">
+
+            <form action="#" class="career-form mb-60">
+                <div class="row" style="margin-bottom: 3%;">
+                    <div class="col-md-6 col-lg-3 my-3">
+                        <div class="input-group position-relative">
+                            <input type="text" class="form-control" placeholder="Enter Your Keywords" id="keywords">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 my-3">
+                        <!-- <div class="select-container">
+                            <select class="custom-select">
+                                <option selected="">Price range</option>
+                                <option value="1"></option>
+                                <option value="2"></option>
+                                <option value="3"></option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <div class="col-md-6 col-lg-3 my-3">
+                        <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
+                            Search
+                        </button>
+                    </div>
+                    <div class="col-md-6 col-lg-3 my-3">
+                        <a href="/checkout">
+                        <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="checkout">
+                            Checkout
+                        </button>
+                    </a>
+                    </div>
+                </div>
+            </form>
+{% endblock %}
+
+
+{% block products %}
+{% for product in allproducts %}
+<div class="job-box d-md-flex align-items-center justify-content-between mb-30">
+    <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+        <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+            {{ product[1].split()[0][0] }}
+        </div>
+        <div class="job-content">
+            <h5 class="text-center text-md-left">{{product[1]}}</h5>
+            <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans lefttext">
+                <!-- <li class="mr-md-4 ">
+                    <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
+                </li> -->
+                <li class="mr-md-4">
+                    <i class="zmdi zmdi-money mr-2"></i> {{product[3]}}
+                </li>
+                <!-- <li class="mr-md-4">
+                    <i class="zmdi zmdi-time mr-2"></i> Full Time
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <form action="" method="post">
+        <div class="job-right my-4 flex-shrink-0">
+            <select name="productquantity" id="productquantity">
+                <option value="1" selected>x1</option>
+                <option value="2">x2</option>
+                <option value="3">x3</option>
+                <option value="4">x4</option>
+              </select>
+        </div>
+    <div class="job-right my-4 flex-shrink-0">
+        <button class="btn d-block w-100 d-sm-inline-block btn-light" value="{{product[0]}}" name="addtocart" type="submit">Add to cart</button>
+    </div>
+    </form>
+</div>
+{% endfor %}
+{% endblock %}

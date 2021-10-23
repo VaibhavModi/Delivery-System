@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <div class="row py-5 mt-4 align-items-center" id="login">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+
+                    <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                        <div class="border-bottom w-100 ml-5"></div>
+                        <div class="border-bottom w-100 mr-5"></div>
+                    </div>
+
+                    <form class="form-signin" method = "post">
+
+                        <select id="job" name="customertype" class="form-control" required>
+                            <option value="">Select an account type</option>
+                            <option value="customer">Customer</option>
+                            <option value="shop">Shop</option>
+                            <option value="deliverybot">DeliveryBot</option>
+                        </select>
+
+                        <div class="userpass">
+                            <input type="username" id="inputusername" class="form-control" placeholder="username" name="username"
+                                required >
+                            <!-- <label for="input">Username</label> -->
+                        </div>
+
+                        <div class="userpass">
+                            <input type="password" id="inputpassword" class="form-control" placeholder="Password" name="password"
+                                required>
+                            <!-- <label for="inputPassword">Password</label> -->
+                            <p style="color: red;">{{ failed }}</p>
+                        </div>
+                        
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Remember password</label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                        <!-- <hr class="my-4"> -->
+                        <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                            <div class="border-bottom w-100 ml-5"></div>
+                            <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                            <div class="border-bottom w-100 mr-5"></div>
+                        </div>
+                        <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                                        class="fab fa-google mr-2"></i> Sign in with Google</button>
+                                                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                                        class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
+                        <div class="text-center w-100">
+                            <p class="text-muted font-weight-bold">Create an account? <a href="/register"
+                                    class="text-primary ml-2">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

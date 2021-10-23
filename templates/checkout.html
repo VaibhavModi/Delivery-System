@@ -1,0 +1,101 @@
+{% extends "index.html" %}
+{% block content %}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container checkout-container">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <!-- <span class="pull-right">(<strong>5</strong>) items</span> -->
+                    <h5>Items in your cart, {{ user_name }}</h5>
+                </div>
+
+                {% for order in orderitems %}
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table shoping-cart-table">
+                            <tbody>
+                            <tr>
+                                <!-- <td width="90">
+                                    <div class="cart-product-imitation">
+                                    </div>
+                                </td> -->
+                                <td class="desc">
+                                    <h3>
+                                    <a href="#" class="text-navy">
+                                        {{order[3]}}
+                                    </a>
+                                    </h3>
+                                    
+                                    <div class="m-t-sm">
+                                        <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    ${{order[10]}}
+                                </td>
+                                <td width="65">
+                                    <input type="text" class="form-control" value="{{order[4]}}" placeholder="">
+                                </td>
+                                <td>
+                                    <h4>
+                                        ${{ order[10]|int * order[4]|int }}
+                                    </h4>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Cart Summary</h5>
+                </div>
+                <div class="ibox-content">
+                    <span>
+                        Total
+                    </span>
+                    <h2 class="font-bold">
+                        
+                        ${{ count }}
+                        
+                    </h2>
+
+                    <hr>
+                    <form method="POST">
+                    <div class="m-t-sm">
+                        <div class="account">
+                            <label for="html">Card number</label>
+                            <input type="accountno" id="cardno" class="form-control" placeholder="cardno" name="cardno"
+                                required  style="
+                                margin-bottom: 4%;
+                            ">
+                            <!-- <label for="input">Username</label> -->
+                        </div>
+                        
+                        <div class="btn-group">
+                        <button class="btn btn-primary btn-sm" value="done" name="payment" type="submit"><i class="fa fa-shopping-cart"></i> Checkout</button>
+                        <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
